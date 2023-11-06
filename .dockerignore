@@ -1,0 +1,17 @@
+#node_modules
+node_modules
+
+#test
+test
+
+#babel configuration
+babel.config.js
+
+#jest configuration
+jest.config.js
+
+#git configuration
+.git
+
+# docker volumes
+mongodb_data_cont
