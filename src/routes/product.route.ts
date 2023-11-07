@@ -78,10 +78,10 @@ export default () => {
       check('name').optional().isString().escape(),
       check('description').optional().isString().escape(),
       check('sku').optional().isString().escape(),
-      check('price').optional().isNumeric().escape(),
+      check('price').optional().isNumeric().toInt().escape(),
       check('file.data').optional().isString().escape(),
       check('file.title').optional().isString().escape(),
-      check("quantity").optional().isNumeric().escape(),
+      check("quantity").optional().isNumeric().toInt().escape(),
       check('categories').optional().isArray(),
       check('categories.*').optional().isString(),
       check('manufacturer').optional().isString().custom(async (value) => {

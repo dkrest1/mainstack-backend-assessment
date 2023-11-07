@@ -31,7 +31,7 @@ export default () => {
 
         return value; 
       }).optional(),
-      check('amount').isNumeric().optional(),
+      check('amount').isNumeric().toInt().optional(),
       check('start_date').isISO8601().toDate().optional(),
       check('end_date').isISO8601().toDate().optional(),
     ],
@@ -84,7 +84,7 @@ export default () => {
 
         return value; 
       }).optional(),
-      check('amount').isNumeric().optional(),
+      check('amount').isNumeric().toInt().optional(),
       check('start_date').isISO8601().toDate().optional(),
       check('end_date').isISO8601().toDate().optional(),
     ],

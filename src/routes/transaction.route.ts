@@ -44,7 +44,7 @@ export default () => {
 
         return value; 
       }).not().isEmpty(),
-      check('quantity_change').isNumeric().not().isEmpty(),
+      check('quantity_change').isNumeric().toInt().not().isEmpty(),
       check('type').isString().isIn(["purchase", "sale", "return", "transfer", "adjustment", "damage", "loss", "other"]).not().isEmpty(),
     ],
     bodyValidate,
@@ -67,7 +67,7 @@ export default () => {
 
         return value; 
       }).optional(),
-      check('quantity_change').isNumeric().optional(),
+      check('quantity_change').isNumeric().toInt().optional(),
       check('type').isString().isIn(["purchase", "sale", "return", "transfer", "adjustment", "damage", "loss", "other"]).optional(),
     ],
     bodyValidate,

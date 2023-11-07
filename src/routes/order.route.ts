@@ -73,7 +73,7 @@ export default () => {
 
         return value; 
       }).not().isEmpty(),
-      check('total_amount').isNumeric().not().isEmpty(),
+      check('total_amount').isNumeric().toInt().not().isEmpty(),
       check('status').isString().not().isEmpty().isIn(["pending", "processing", "shipped", "delivered"]),
       check('product_id').custom(async (value) => {
         if (!mongoose.Types.ObjectId.isValid(value)) {
@@ -88,8 +88,8 @@ export default () => {
 
         return value; 
       }).not().isEmpty(),
-      check('quantity').isNumeric().not().isEmpty(),
-      check('sub_total').isNumeric().not().isEmpty(),
+      check('quantity').isNumeric().toInt().not().isEmpty(),
+      check('sub_total').isNumeric().toInt().not().isEmpty(),
     ],
     bodyValidate,
     orders.createOrder.bind(orders));
@@ -110,7 +110,7 @@ export default () => {
 
         return value; 
       }).optional(),
-      check('total_amount').isNumeric().optional(),
+      check('total_amount').isNumeric().toInt().optional(),
       check('status').isString().optional().isIn(["pending", "processing", "shipped", "delivered"]),
       check('product_id').custom(async (value) => {
         if (!mongoose.Types.ObjectId.isValid(value)) {
@@ -125,8 +125,8 @@ export default () => {
 
         return value; 
       }).optional(),
-      check('quantity').isNumeric().optional(),
-      check('sub_total').isNumeric().optional(),
+      check('quantity').isNumeric().toInt().optional(),
+      check('sub_total').isNumeric().toInt().optional(),
     ],
     bodyValidate,
     orders.updateOrder.bind(orders));

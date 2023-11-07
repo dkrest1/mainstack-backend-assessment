@@ -39,7 +39,7 @@ export default () => {
         check('username').exists().isString().escape(),
         check("address").exists().isString().escape(),
         check("phone").exists().isString().escape(),
-        check("role").isString().exists().isIn(["admin", "super_admin"]).escape(),
+        check("role").isString().exists().isIn(["admin"]).escape(),
       ],
       bodyValidate,
       auths.createUser.bind(auths));
