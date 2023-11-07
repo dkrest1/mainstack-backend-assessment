@@ -11,7 +11,7 @@ COPY . .
 RUN npm install
 
 # Build the application
-RUN npm run start
+RUN npm run build
 
 # Expose the application port 
 EXPOSE ${PORT}

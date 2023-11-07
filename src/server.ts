@@ -2,7 +2,7 @@ import "module-alias/register";
 import { variables, logger } from "./config";
 import mongoose from "mongoose";
 import http from 'http';
-import serverApp from "@/app";
+import serverApp from "./app";
 
 const app = serverApp();
 const server = http.createServer(app);

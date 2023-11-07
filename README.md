@@ -12,6 +12,10 @@ e-product store manager backend APIS
 - MongoDB
 - Mongoose ORM
 
+## Database Model Design
+
+[Click the link to view the ER diagram](https://dbdiagram.io/d/mainstack-product-management-6549ab1b7d8bbd6465a039b2)
+
 
 ## Getting Started
 
