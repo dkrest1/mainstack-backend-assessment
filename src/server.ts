@@ -1,4 +1,4 @@
-import "module-alias/register";
+require("module-alias/register");
 import { variables, logger } from "./config";
 import mongoose from "mongoose";
 import http from 'http';
@@ -46,4 +46,3 @@ mongoose
     .then(() => logger.info("connected to database"))
     .then(() => server.listen(port));
 
-    
