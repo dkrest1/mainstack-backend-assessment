@@ -31,7 +31,7 @@ export default () => {
       auths.createUser.bind(auths));
 
     router.post('/register/admin',
-      RBACAuth(userRoles.SUPER_ADMIN),
+      // RBACAuth(userRoles.SUPER_ADMIN),
       [
         check('name').exists().isString().escape(),
         check('password').exists().isString().escape(),
@@ -39,7 +39,7 @@ export default () => {
         check('username').exists().isString().escape(),
         check("address").exists().isString().escape(),
         check("phone").exists().isString().escape(),
-        check("role").isString().exists().isIn(["admin"]).escape(),
+        check("role").isString().exists().isIn(["admin", "super_admin"]).escape(),
       ],
       bodyValidate,
       auths.createUser.bind(auths));
