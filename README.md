@@ -45,3 +45,6 @@ $ npm run dev
 ```
 
 ### API documentation
+
+[Click the link to view the Postman Documentation](https://oluwatosindev.postman.co/workspace/oluwatosin-Workspace~602c744d-ae4a-4424-8cce-ffde0d6e542c/collection/23035391-b9fcc9d9-3573-4daf-bf9b-675d2bb1fe13?action=share&creator=23035391&active-environment=23035391-2ae180cc-0b6c-449d-b522-68f81460ab49)
+
