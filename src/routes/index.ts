@@ -6,6 +6,7 @@ import orderRoute from './order.route'
 import discountRoute from './discount.route'
 import reviewRoute from './review.route'
 import transactionRoute from './transaction.route'
+import swaggerRoute from "./swagger.route"
 
 const router = express.Router()
 
@@ -17,6 +18,8 @@ export default () => {
   router.use('/discounts', discountRoute())
   router.use('/reviews', reviewRoute())
   router.use('/transactions', transactionRoute())
+  router.use('/transactions', transactionRoute())
+  router.use("/docs", swaggerRoute)
 
   return router
 }
