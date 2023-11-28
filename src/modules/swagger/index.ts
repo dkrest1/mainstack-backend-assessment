@@ -1,2 +1,2 @@
-import swaggerDefinition from "./swagger.definition";
-export { swaggerDefinition };
+import swaggerDefinition from './swagger.definition'
+export { swaggerDefinition }
