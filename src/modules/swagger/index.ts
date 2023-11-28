@@ -1,24 +1,24 @@
-import { variables } from "@/config";
+import { variables } from '@/config'
 
-const port = variables.PORT;
+const port = variables.PORT
 
 const swaggerDefinition = {
-  openapi: "3.0.0",
+  openapi: '3.0.0',
   info: {
-    title: "STORE MANAGER APIs DOCUMENTATION",
-    version: "0.0.1",
-    description: "Store Manager APIs for development",
+    title: 'STORE MANAGER APIs DOCUMENTATION',
+    version: '0.0.1',
+    description: 'Store Manager APIs for development',
     license: {
-      name: "ISC",
-      url: "",
+      name: 'ISC',
+      url: '',
     },
   },
   servers: [
     {
       url: `http://localhost:${port}/api/v1`,
-      description: "Development Server",
+      description: 'Development Server',
     },
   ],
-};
+}
 
-export default swaggerDefinition;
+export default swaggerDefinition

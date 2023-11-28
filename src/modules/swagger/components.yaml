@@ -7,16 +7,7 @@ components:
           type: string
         user_type:
           type: string
-          enum:
-            [
-              "admin",
-              "graduate",
-              "institution",
-              "staff",
-              "mentor",
-              "employer",
-              "other",
-            ]
+          enum: ['admin', 'graduate', 'institution', 'staff', 'mentor', 'employer', 'other']
         name:
           type: string
         is_email_verified:
@@ -32,7 +23,7 @@ components:
           type: string
         avatar:
           type: object
-          $ref: "#/components/schemas/Upload"
+          $ref: '#/components/schemas/Upload'
         is_active:
           type: boolean
         createdAt:
