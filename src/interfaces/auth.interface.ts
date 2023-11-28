@@ -1,5 +1,5 @@
-import { USERS } from "@/global.types"
+import { USERS } from '@/global.types'
 export interface LoginResponse {
-    user:  USERS,
-    access_token: string
+  user: USERS
+  access_token: string
 }

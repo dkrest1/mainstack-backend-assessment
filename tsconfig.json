@@ -1,18 +1,17 @@
 {
-    "compilerOptions": {
-
-        "target": "es2022",
-        "module": "Node16",
-        "rootDir": ".",                                 
-        "outDir": "./dist",                                  
-        "esModuleInterop": true,                             
-        "strict": true,   
-        "forceConsistentCasingInFileNames": true,                                  
-        "skipLibCheck": true,                                
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["src/*"]
-        }
-    },
-    "include": ["src", "tests"]
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "Node16",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "tests"]
 }

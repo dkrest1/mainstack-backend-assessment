@@ -1,41 +1,37 @@
-import { variables } from ".";
-import winston from "winston";
-import moment from "moment";
+import { variables } from '.'
+import winston from 'winston'
+import moment from 'moment'
 
 interface LoggingInfo {
-  level: string;
-  message: string;
+  level: string
+  message: string
 }
 
 const enumerateErrorFormat = winston.format((info: LoggingInfo) => {
   if (info instanceof Error) {
-    Object.assign(info, { message: info.stack });
+    Object.assign(info, { message: info.stack })
   }
 
-  return info;
-});
+  return info
+})
 
 const customFormat = winston.format.printf(
-  (info: LoggingInfo) =>
-    ` [${info.level}] - ${moment().format("MM/DD/YYYY, h:mm:ss A")}  ${info.message
-    }`
-);
+  (info: LoggingInfo) => ` [${info.level}] - ${moment().format('MM/DD/YYYY, h:mm:ss A')}  ${info.message}`,
+)
 
 const logger = winston.createLogger({
-  level: variables.NODE_ENV === "development" ? "debug" : "info",
+  level: variables.NODE_ENV === 'development' ? 'debug' : 'info',
   format: winston.format.combine(
     enumerateErrorFormat(),
-    variables.NODE_ENV === "development"
-      ? winston.format.colorize()
-      : winston.format.uncolorize(),
+    variables.NODE_ENV === 'development' ? winston.format.colorize() : winston.format.uncolorize(),
     winston.format.splat(),
-    customFormat
+    customFormat,
   ),
   transports: [
     new winston.transports.Console({
-      stderrLevels: ["error"],
+      stderrLevels: ['error'],
     }),
   ],
-});
+})
 
-export default logger;
+export default logger

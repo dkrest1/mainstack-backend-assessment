@@ -1,76 +1,76 @@
-import { _Request, _Response, _NextFunction } from "@/types";
-import httpStatus from "http-status";
-import UsersService from "@/services/users.service";
-import UploadsService from "@/services/upload.service";
+import { _Request, _Response, _NextFunction } from '@/types'
+import httpStatus from 'http-status'
+import UsersService from '@/services/users.service'
+import UploadsService from '@/services/upload.service'
 
 class UsersController {
   private usersService: UsersService
   private uploadService: UploadsService
 
-  constructor() { 
+  constructor() {
     this.usersService = new UsersService()
     this.uploadService = new UploadsService()
   }
 
-  getUser = async (req: _Request, res: _Response, next: _NextFunction) => { 
-    const parsePage = Number(req.query.page || 1) as number;
-    const parseLimit = Number(req.query.limit || 10) as number;
-    const role = req.query.role as string | undefined;
+  getUser = async (req: _Request, res: _Response, next: _NextFunction) => {
+    const parsePage = Number(req.query.page || 1) as number
+    const parseLimit = Number(req.query.limit || 10) as number
+    const role = req.query.role as string | undefined
     try {
       const response = await this.usersService.getUser(parsePage, parseLimit, role)
 
       res.status(200).json({
         status: httpStatus[200],
-        msg: "success",
-        payload: response
+        msg: 'success',
+        payload: response,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
-  
-  findUser = async (req: _Request, res: _Response, next: _NextFunction) => { 
+
+  findUser = async (req: _Request, res: _Response, next: _NextFunction) => {
     const userId = req.params.userId
     try {
       const response = await this.usersService.findUser(userId)
 
       res.status(200).json({
         status: httpStatus[200],
-        msg: "success",
-        payload: response
+        msg: 'success',
+        payload: response,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
 
-  getProfile = async (req: _Request, res: _Response, next: _NextFunction) => { 
+  getProfile = async (req: _Request, res: _Response, next: _NextFunction) => {
     const userId = req.user._id
     try {
       const response = await this.usersService.findUser(userId)
 
       res.status(200).json({
         status: httpStatus[200],
-        msg: "success",
-        payload: response
+        msg: 'success',
+        payload: response,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
 
   updateProfile = async (req: _Request, res: _Response, next: _NextFunction) => {
     const updateBody = req.body
-    const userId = req.user._id 
+    const userId = req.user._id
     try {
       const response = await this.usersService.updateProfile(userId, updateBody)
 
       res.status(200).json({
         status: httpStatus[200],
-        msg: "success",
-        payload: response
+        msg: 'success',
+        payload: response,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
@@ -83,15 +83,15 @@ class UsersController {
 
       res.status(200).json({
         status: httpStatus[200],
-        msg: "success",
-        payload: response
+        msg: 'success',
+        payload: response,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
 
-  deleteProfile = async (req: _Request, res: _Response, next: _NextFunction) => { 
+  deleteProfile = async (req: _Request, res: _Response, next: _NextFunction) => {
     const userId = req.user._id
     try {
       const response = await this.usersService.deleteProfile(userId)
@@ -99,13 +99,12 @@ class UsersController {
       res.status(200).json({
         status: httpStatus[200],
         msg: response,
-        payload: null
+        payload: null,
       })
-    }catch(err) {
+    } catch (err) {
       next(err)
     }
   }
-  
 }
 
-export default UsersController;
+export default UsersController

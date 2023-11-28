@@ -1,11 +1,10 @@
-import { logger } from '@/config';
-import jwt from 'jsonwebtoken';
+import { logger } from '@/config'
+import jwt from 'jsonwebtoken'
 
 export default function verifyToken(token: string, secret: string) {
   try {
-    return jwt.verify(token, secret);
-  }
-  catch (error) {
-    return logger.error(error);
+    return jwt.verify(token, secret)
+  } catch (error) {
+    return logger.error(error)
   }
 }

@@ -1,7 +1,4 @@
-import verifyToken from "./verify-token";
-import generateToken from "./generate-token";
+import verifyToken from './verify-token'
+import generateToken from './generate-token'
 
-export {
-    verifyToken,
-    generateToken
-}
+export { verifyToken, generateToken }
