@@ -1,0 +1,58 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        user_type:
+          type: string
+          enum:
+            [
+              "admin",
+              "graduate",
+              "institution",
+              "staff",
+              "mentor",
+              "employer",
+              "other",
+            ]
+        name:
+          type: string
+        is_email_verified:
+          type: boolean
+        email:
+          type: string
+          format: email
+        username:
+          type: string
+        address:
+          type: string | null
+        phone:
+          type: string
+        avatar:
+          type: object
+          $ref: "#/components/schemas/Upload"
+        is_active:
+          type: boolean
+        createdAt:
+          type: date
+        updatedAt:
+          type: date
+
+      example:
+        id: 5ebac534954b54139806c112
+        user_type: graduate
+        name: tvet
+        is_email_verified: false
+        email: tvet@example.com
+        is_active: false
+    Upload:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        mimetype:
+          type: string

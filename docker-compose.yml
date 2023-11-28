@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo:jammy
     restart: always
-    container_name: mainstack.mongo
+    container_name: store-manager-api.mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -15,7 +15,7 @@ services:
   mongo-express:
     image: mongo-express:1.0.0-alpha.4
     restart: always
-    container_name: mainstack.mongo-express
+    container_name: store-manager-api.mongo-express
     ports:
       - 8081:8081
     environment:
@@ -25,9 +25,9 @@ services:
     depends_on:
       - mongo
 
-  product-api:
+  store-manager:
     build: .
-    container_name: mainstack.product-api
+    container_name: store-manager-api
     ports:
       - '3000:3000'
     volumes:
