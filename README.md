@@ -22,7 +22,7 @@ e-product store manager backend APIS
 
 ```bash
 $ git clone repo url
-$ cd mainstack-backend-assessment
+$ cd store-manager-apis
 ```
 
 2. Create a .env file and copy files from .env.example to .env
