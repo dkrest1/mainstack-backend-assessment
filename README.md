@@ -1,4 +1,4 @@
-# The Mainstack Backend Assessment
+# Store Manager APIs
 
 ## Description
 
@@ -14,7 +14,7 @@ e-product store manager backend APIS
 
 ## Database Model Design
 
-[Click the link to view the ER diagram](https://dbdiagram.io/d/mainstack-product-management-6549ab1b7d8bbd6465a039b2)
+[Click the link to view the ER diagram](https://dbdiagram.io/d/store-manager-api-6549ab1b7d8bbd6465a039b2)
 
 ## Getting Started
 
