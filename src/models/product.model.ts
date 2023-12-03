@@ -16,14 +16,6 @@ const ProductSchema = new mongoose.Schema<PRODUCTS>(
       type: String,
       required: true,
     },
-    manufacturer_id: {
-      type: mongoose.Types.ObjectId || null,
-      ref: 'users',
-    },
-    supplier_id: {
-      type: mongoose.Types.ObjectId || null,
-      ref: 'users',
-    },
     price: {
       type: Number,
       required: true,

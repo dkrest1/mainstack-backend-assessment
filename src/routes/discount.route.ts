@@ -18,8 +18,6 @@ export default () => {
       userRoles.SUPER_ADMIN,
       userRoles.ADMIN,
       userRoles.STAFF,
-      userRoles.MANUFACTURER,
-      userRoles.SUPPLIER,
       userRoles.CUSTOMER,
     ),
     [
@@ -54,8 +52,6 @@ export default () => {
       userRoles.SUPER_ADMIN,
       userRoles.ADMIN,
       userRoles.STAFF,
-      userRoles.MANUFACTURER,
-      userRoles.SUPPLIER,
       userRoles.CUSTOMER,
     ),
     discountValidate,

@@ -1,4 +1,4 @@
-type USER_ROLE = 'super_admin' | 'admin' | 'staff' | 'supplier' | 'manufacturer' | 'customer'
+type USER_ROLE = 'super_admin' | 'admin' | 'staff' | 'customer'
 
 type ORDER_STATUS = 'pending' | 'processing' | 'shipped' | 'delivered'
 
@@ -32,8 +32,6 @@ export type PRODUCTS = {
   description: string
   categories: string[]
   sku: string
-  manufacturer_id: USERS | null
-  supplier_id: USERS | null
   price: number
   quantity: number
   image_id: UPLOADS | null
